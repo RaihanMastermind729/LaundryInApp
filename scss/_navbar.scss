@@ -1,5 +1,8 @@
-.navbar-nav {
+rules:
+  at-rule-no-unknown: null
+  scss/at-rule-no-unknown: true
 
+.navbar-nav {
   .form-inline .input-group {
     width: 100%;
   }
@@ -10,6 +13,7 @@
         color: $white;
       }
     }
+    
     &.dropdown {
       .dropdown-toggle {
         &::after {
@@ -23,22 +27,26 @@
           font-family: 'Font Awesome 5 Free';
         }
       }
+      
       &.show {
         .dropdown-toggle::after {
           content: '\f107';
         }
       }
+      
       &.no-arrow {
         .dropdown-toggle::after {
           display: none;
         }
       }
     }
+    
     .nav-link {
       &:focus {
         // remove outline for Safari and Firefox
         outline: none;
       }
+      
       .badge {
         position: absolute;
         margin-left: 0.75rem;
@@ -49,24 +57,24 @@
     }
   }
 
-  @media(min-width: 768px) {
-
+  @media (min-width: 768px) {
     .form-inline .input-group {
       width: auto;
     }
-
   }
-
 }
 
 .sidebar {
   width: $sidebar-collapsed-width !important;
   background-color: $gray-900;
   min-height: calc(100vh - #{$navbar-base-height});
+  
   @include sidebar-icons;
+  
   .nav-item {
     .nav-link {
       color: fade-out($white, 0.5);
+      
       &:active,
       &:focus,
       &:hover {
@@ -74,6 +82,7 @@
       }
     }
   }
+  
   &.toggled {
     width: 0 !important;
     overflow: hidden;
@@ -91,24 +100,29 @@
         text-align: left;
         padding: 1rem;
         width: $sidebar-base-width;
+        
         span {
           font-size: 1rem;
           display: inline;
         }
       }
+      
       .dropdown-menu {
         position: static !important;
         margin: 0 1rem;
         // Position fix for Firefox
         top: 0;
       }
+      
       &.dropdown .dropdown-toggle::after {
         display: block;
       }
     }
+    
     &.toggled {
       overflow: visible;
       width: $sidebar-collapsed-width !important;
+      
       @include sidebar-icons;
     }
   }

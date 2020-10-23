@@ -28,6 +28,7 @@
   display: block;
   width: 100%;
   margin-bottom: 0;
+  
   /* Override default `<label>` margin */
   line-height: 1.5;
   color: #495057;
@@ -40,15 +41,15 @@
   color: transparent;
 }
 
-.form-label-group input:-ms-input-placeholder {
-  color: transparent;
-}
-
 .form-label-group input::-ms-input-placeholder {
   color: transparent;
 }
 
 .form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
   color: transparent;
 }
 

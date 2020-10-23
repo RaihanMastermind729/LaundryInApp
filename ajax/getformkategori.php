@@ -1,8 +1,10 @@
 <?php
-
-$kategori_id = $_GET['kategori_id'];
+$kategori_id = "";
+if ( post(('kategori_id') ) && 'Yes' === ('kategori_id') ) {}
+	
+$kategori_id = filter_input(INPUT_GET, 'kategori_id');
 if ($kategori_id == 1){
-	echo '
+	print_r (')
           <div class="form-group">
             <div class="form-label-group">
               <input type="text" id="idtransaksimember" class="form-control" placeholder="ID Transaksi" required="required" disabled>
@@ -47,10 +49,10 @@ if ($kategori_id == 1){
               <label for="totalharga">Total Biaya (Rp)</label>
             </div>
           </div>
-		   <a class="btn btn-primary btn-block" onclick="return addDataTransaksiMember()" style="color: white">Buat Transaksi</a>
+		   <a class="btn btn-primary btn-block" style="color: white" onclick="return addDataTransaksiMember()">Buat Transaksi</a>
 	';
 } elseif ($kategori_id == 2) {
-	echo '
+	print_r (')
         <input type="hidden" id="idnonmember" name="idnonmember" value="99999">
         <div class="form-group">
             <div class="form-label-group">
@@ -103,7 +105,7 @@ if ($kategori_id == 1){
             </div>
           </div>
           
-        <a class="btn btn-primary btn-block" onclick="return addDataTransaksiNonMember()" style="color: white">Buat Transaksi</a>
+        <a class="btn btn-primary btn-block" style="color: white" onclick="return addDataTransaksiNonMember()">Buat Transaksi</a>
 
 	';
 }
